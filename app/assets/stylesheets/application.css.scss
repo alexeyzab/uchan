@@ -1,0 +1,12 @@
+@import "normalize-rails";
+@import "bourbon";
+@import "base/base";
+@import "neat";
+
+div.outer-container {
+  @include outer-container;
+}
+
+div.boards {
+  @include span-columns(6);
+}

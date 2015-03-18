@@ -1,0 +1,9 @@
+<%= @board.name %>
+<% @board.topics.each do |topic| %>
+  <%= link_to topic.topic_name, topic_path(topic) %>
+<% end %>
+
+<%= simple_form_for @board.topic do |f| %>
+  <%= f.input :topic_name %>
+  <%= f.input :description %>
+<% end %>
