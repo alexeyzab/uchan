@@ -1,0 +1,7 @@
+<div class="inner-container">
+  <%= simple_form_for([@board, @topic, @post]) do |f| %>
+    <%= f.input :post_title %>
+    <%= f.input :post_description %>
+    <%= f.submit "Create Post" %>
+  <% end %>
+</div>

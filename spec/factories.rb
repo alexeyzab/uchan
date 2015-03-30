@@ -1,4 +1,7 @@
-FactoryGirl.define do
+FactoryGirl.define do  factory :post do
+    
+  end
+
   sequence(:name) { |n| "Board #{n}" }
   sequence(:id) { |id| id }
   sequence(:topic_name) { |t| "Topic #{t}" }
@@ -13,11 +16,5 @@ FactoryGirl.define do
     board
     topic_name
     description "Topic description"
-  end
-
-  factory :post do
-    board
-    topic
-    post_description
   end
 end

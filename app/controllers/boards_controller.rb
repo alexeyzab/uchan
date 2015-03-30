@@ -6,6 +6,8 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
+    @topics = @board.topics.order("created_at ASC")
+    @topic = @board.topics.build
   end
 
   private

@@ -1,9 +1,6 @@
 <%= @board.name %>
-<% @board.topics.each do |topic| %>
-  <%= link_to topic.topic_name, topic_path(topic) %>
+<% @topics.each do |topic| %>
+  <%= link_to topic.topic_name, board_topic_path(@board, topic) %>
 <% end %>
 
-<%= simple_form_for @board.topic do |f| %>
-  <%= f.input :topic_name %>
-  <%= f.input :description %>
-<% end %>
+<%= render "shared/topic_form" %>

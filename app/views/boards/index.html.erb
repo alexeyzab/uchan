@@ -1,12 +1,10 @@
-<div class="outer-container">
-<span class="boards">
+<div class="index-container">
   <% @boards.each do |board| %>
     <%= link_to board.name, board_path(board) %>
   <% end %>
-</span>
+</div>
 <%= link_to "About", page_path("about") %>
 <%= link_to "Contact", page_path("contact") %>
 <%= link_to "FAQ", page_path("faq") %>
-<div>
 
 
