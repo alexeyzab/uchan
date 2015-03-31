@@ -1,7 +1,9 @@
 class TopicsController < ApplicationController
+  layout "board", only: :show
   before_action :get_board
 
   def show
+    @boards = Board.all
     @topic = @board.topics.find(params[:id])
     @posts = @topic.posts.order("created_at ASC")
     @post = @topic.posts.build
@@ -25,7 +27,7 @@ class TopicsController < ApplicationController
   private
 
   def topic_params
-    params.require(:topic).permit(:topic_name, :description)
+    params.require(:topic).permit(:thread_name, :description)
   end
 
   def get_board

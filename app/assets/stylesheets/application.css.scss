@@ -3,230 +3,158 @@
 @import "base/grid-settings";
 @import "neat";
 @import "base/base";
+@import "footer";
 
-div.outer-container {
+.alert-notice {
+  text-align: center;
+}
+
+.outer-container {
   @include outer-container;
 }
 
-div.index-container {
+.index-container {
+  @include span-columns(8);
+  @include shift(2);
+}
+
+.inner-container {
   @include span-columns(4);
   @include shift(4);
 }
 
-// Footer styles
+#form-container {
+  @include span-columns(4);
+  @include shift(4);
+  margin-bottom: 3em;
+  margin-bottom: 3em;
+}
 
-// Uncomment this for a sticky footer.
+hr {
+  border: none;
+  border-top: 1px solid #B7C5D9;
+  height: 0;
+  clear: both;
+}
 
- .wrapper-for-content-outside-of-footer {
-   min-height: 100%;
-   height: auto !important;
-   height: 100%;
-   margin: 0 auto -4em;
- }
+// Logo
 
- html, body {
-  height: 100%;
- }
+#logo {
+  @include span-columns(6);
+  @include shift(3);
 
- .wrapper-for-content-outside-of-footer:after {
-   content: "";
-   display: block;
- }
-
- .footer-2, .wrapper-for-content-outside-of-footer:after {
-   height: 17em;
-
-   @include media($large-screen) {
-     height: 4em;
-   }
- }
-
-.footer-2 {
-
-    ////////////////////////////////////////////////////////////////
-
-    $base-spacing: 1.5em !default;
-    $base-accent-color: #477DCA !default;
-    $medium-screen: em(640) !default;
-    $large-screen: em(860) !default;
-
-    ul {
-      margin: 0;
-      padding: 0;
-      line-height: 1.5em;
-    }
-
-    li {
-      list-style: none;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    ////////////////////////////////////////////////////////////////
-
-    $footer-background:
-    desaturate(darken($base-accent-color,
-    20%), 30%);
-    $footer-color: white;
-    $footer-link-color:
-    transparentize($footer-color,
-    0.6);
-    $footer-disclaimer-color:
-    transparentize($footer-color,
-    0.6);
-
-    background:
-    $footer-background;
-    padding:
-    $base-spacing;
+  h1 {
+    margin-left: 230px;
     width: 100%;
-    display:
-    inline-block;
-
-    .footer-logo
-    {
-      margin-right:
-      1em;
-      margin-bottom:
-      1em;
-
-      @include
-      media($large-screen)
-      {
-        float:
-        left;
-        margin-bottom:
-        0;
-      }
-    }
-
-    .footer-logo
-    img
-    {
-      height:
-      1.6em;
-    }
-
-    ul
-    {
-      margin-bottom:
-      1em;
-
-      @include
-      media($large-screen)
-      {
-        float:
-        left;
-        line-height:
-        1.8em;
-        margin-left:
-        1em;
-        margin-bottom:
-        0;
-      }
-    }
-
-    ul
-    li
-    {
-      font-weight:
-      800;
-      padding-right:
-      1em;
-
-      @include
-      media($large-screen)
-      {
-        display:
-        inline;
-        text-align:
-        left;
-      }
-    }
-
-    ul
-    li
-    a
-    {
-      color:
-      $footer-link-color;
-
-      &:focus,
-      &:hover
-      {
-        color:
-        transparentize($footer-color,
-        0);
-      }
-    }
-
-    .footer-secondary-links
-    {
-      @include
-      media($large-screen)
-      {
-        float:
-        right;
-      }
-
-      li
-      {
-        font-size:
-        0.8em;
-        font-weight:
-        400;
-      }
-
-      ul.footer-social
-      {
-        margin-top:
-        1em;
-
-        @include
-        media($large-screen)
-        {
-          float:
-          right;
-          margin-top:
-          0;
-        }
-
-        li
-        {
-          font-size:
-          1em;
-          float:
-          left;
-          line-height:
-          0;
-          padding-right:
-          0.7em;
-
-          &:last-child
-          {
-            padding-right:
-            0;
-          }
-        }
-
-        img
-        {
-          height:
-          1.6em;
-          opacity:
-          0.7;
-          padding:
-          1px;
-
-          &:focus,
-          &:hover
-          {
-            opacity:
-            1;
-          }
-        }
-      }
-    }
+    height: 100%;
+    display: block;
   }
+}
+
+#hd {
+  margin-bottom: 0;
+}
+
+// Boards index
+
+.visibility_hidden {
+  visibility:hidden;
+}
+
+.box-outer {
+  border: 1px solid #7c96bc;
+  margin-bottom: .5em;
+  padding-bottom: .5em;
+  zoom: 100%;
+}
+
+.box-bar {
+  position: relative;
+  zoom: 100%;
+  padding-left: .5em;
+  line-height: 2em;
+  background: #40526B;
+
+  h2 {
+    color: #B2B9C4;
+  }
+}
+
+.box-content {
+  font-size: 93%;
+  margin: 0;
+  padding: .5em;
+  padding-top: .25em;
+  padding-bottom: 10em;
+  line-height: 130%;
+}
+
+#boards {
+  .column {
+    float: left;
+    width: 12em;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: #435166;
+  }
+
+  h3 {
+    text-decoration: underline;
+    display: inline;
+  }
+}
+
+// Boards show
+
+#boardNav {
+  font-size: 9pt;
+  color: #89A;
+  display: block;
+  position: absolute;
+
+  a {
+    font-weight: normal;
+    padding: 1px;
+    text-decoration: none;
+    color: #34345C;
+  }
+}
+
+.boardBanner {
+  text-align: center;
+  color: #313c4c;
+  clear: both;
+
+  #boardCnt {
+    border: 1px solid #34345C;
+    margin: 5px auto;
+    width: 300px;
+    height: 100px;
+    max-width: 100%;
+  }
+
+  .boardTitle {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: -2px;
+    margin-top: 0px;
+  }
+}
+
+.abovePostForm {
+  width: 90%;
+}
+
+
+#togglePostForm {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.board {
+  clear: both;
+}

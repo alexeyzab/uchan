@@ -1,4 +1,5 @@
 class BoardsController < ApplicationController
+  layout "board", only: :show
 
   def index
     @boards = Board.all
@@ -6,6 +7,7 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
+    @boards = Board.all
     @topics = @board.topics.order("created_at ASC")
     @topic = @board.topics.build
   end
@@ -13,6 +15,6 @@ class BoardsController < ApplicationController
   private
 
   def board_params
-    params.require(:board).permit(:name, :id)
+    params.require(:board).permit(:name, :id, :category)
   end
 end

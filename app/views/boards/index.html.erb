@@ -1,10 +1,41 @@
-<div class="index-container">
-  <% @boards.each do |board| %>
-    <%= link_to board.name, board_path(board) %>
-  <% end %>
+<div id="hd">
+  <div id="logo">
+    <h1><%= link_to "LOGO", root_path %></h1>
+  </div>
 </div>
-<%= link_to "About", page_path("about") %>
-<%= link_to "Contact", page_path("contact") %>
-<%= link_to "FAQ", page_path("faq") %>
 
-
+<div class="index-container">
+  <div class="box-outer" id="boards">
+    <div class="box-inner">
+      <div class="box-bar">
+        <h2>Boards</h2>
+      </div>
+      <div class="box-content">
+        <div class="column">
+          <h3>Interests</h3>
+          <ul>
+            <% @boards.interests.each do |board| %>
+              <li><%= link_to board.name, board_path(board) %></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="column">
+          <h3>Creative</h3>
+          <ul>
+            <% @boards.creative.each do |board| %>
+              <li><%= link_to board.name, board_path(board) %></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="column">
+          <h3>Other</h3>
+          <ul>
+            <% @boards.other.each do |board| %>
+              <li><%= link_to board.name, board_path(board) %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

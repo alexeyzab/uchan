@@ -1,7 +1,5 @@
-<div class="inner-container">
-  <%= simple_form_for([@board, @topic]) do |f| %>
-    <%= f.input :topic_name %>
-    <%= f.input :description %>
-    <%= f.submit "Create Topic" %>
-  <% end %>
-</div>
+<%= simple_form_for([@board, @topic]) do |f| %>
+  <%= f.input :thread_name %>
+  <%= f.input :description %>
+  <%= f.submit "Create Thread" %>
+<% end %>

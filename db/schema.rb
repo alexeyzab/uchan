@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150324020549) do
+ActiveRecord::Schema.define(version: 20150331212131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "boards", force: :cascade do |t|
     t.string "name"
+    t.string "category"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -30,7 +31,7 @@ ActiveRecord::Schema.define(version: 20150324020549) do
   end
 
   create_table "topics", force: :cascade do |t|
-    t.string   "topic_name"
+    t.string   "thread_name"
     t.text     "description"
     t.integer  "board_id"
     t.datetime "created_at"

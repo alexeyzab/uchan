@@ -1,4 +1,31 @@
-<%= @topic.topic_name %>
-<%= @topic.description %>
+<div id="boardNav">
+  <span class="boardList">
+    <% @boards.each do |board| %>
+      /<%= link_to board.name, board_path(board) %>/
+    <% end %>
+  </span>
+</div>
 
-<%= render "shared/posts_form" %>
+<div class="boardBanner">
+  <div id="boardCnt">
+    Placeholder
+  </div>
+  <div class="boardTitle">
+    <%= @board.name %>
+  </div>
+</div>
+
+<hr />
+
+<div id="togglePostForm">
+  [<%= link_to "Post a New Reply", "#" %>]
+</div>
+
+<div id="form-container">
+  <%= render "shared/posts_form" %>
+</div>
+
+<hr />
+
+<%= @topic.thread_name %>
+<%= @topic.description %>
