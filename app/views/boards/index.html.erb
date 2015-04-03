@@ -5,7 +5,7 @@
 </div>
 
 <div class="index-container">
-  <div class="box-outer" id="boards">
+  <div class="box-outer top-box" id="boards">
     <div class="box-inner">
       <div class="box-bar">
         <h2>Boards</h2>
@@ -33,6 +33,82 @@
             <% @boards.other.each do |board| %>
               <li><%= link_to board.name, board_path(board) %></li>
             <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="index-container">
+  <div class="left-container">
+    <div class="box-outer left-box" id="recent-images">
+      <div class="box-inner">
+        <div class="box-bar">
+          <h2>Recent Images</h2>
+        </div>
+        <div class="box-content">
+          <ul>
+            <li>Left</li>
+            <li>Left</li>
+            <li>Left</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right-container">
+    <div class="box-outer right-box" id="recent-threads">
+      <div class="box-inner">
+        <div class="box-bar">
+          <h2>Latest Posts</h2>
+        </div>
+        <div class="box-content">
+          <ul>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="box-outer right-box" id="popular-threads">
+      <div class="box-inner">
+        <div class="box-bar">
+          <h2>Popular Threads</h2>
+        </div>
+        <div class="box-content">
+          <ul>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="box-outer right-box">
+      <div class="box-inner">
+        <div class="box-bar">
+          <h2>Stats</h2>
+        </div>
+        <div class="box-content">
+          <ul>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
           </ul>
         </div>
       </div>

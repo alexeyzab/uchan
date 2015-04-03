@@ -5,6 +5,13 @@
 @import "base/base";
 @import "footer";
 
+$base-primary-color: #5F9EA0;
+$base-secondary-color: #FAF3DD;
+
+body {
+  background-image: linear-gradient(to top, #5F9EA0 0%, #FAF3DD 100%);
+}
+
 .alert-notice {
   text-align: center;
 }
@@ -27,15 +34,27 @@
   @include span-columns(4);
   @include shift(4);
   margin-bottom: 3em;
-  margin-bottom: 3em;
+}
+
+.left-container {
+  @include span-columns(4 of 8);
+}
+
+.right-container {
+  @include span-columns(4 of 8);
 }
 
 hr {
   border: none;
-  border-top: 1px solid #B7C5D9;
+  border-top: $base-border;
   height: 0;
   clear: both;
 }
+
+div {
+  display: block;
+}
+
 
 // Logo
 
@@ -58,14 +77,28 @@ hr {
 // Boards index
 
 .visibility_hidden {
-  visibility:hidden;
+  visibility: hidden;
 }
 
-.box-outer {
-  border: 1px solid #7c96bc;
+.top-box {
+  border: $base-border;
   margin-bottom: .5em;
   padding-bottom: .5em;
   zoom: 100%;
+  background-color: $base-secondary-color;
+  overflow: auto;
+}
+
+.left-box {
+  background: white;
+  background-color: $base-secondary-color;
+  color: white;
+}
+
+.right-box {
+  background: white;
+  background-color: $base-secondary-color;
+  color: white
 }
 
 .box-bar {
@@ -73,19 +106,21 @@ hr {
   zoom: 100%;
   padding-left: .5em;
   line-height: 2em;
-  background: #40526B;
+  background: $base-primary-color;
 
   h2 {
-    color: #B2B9C4;
+    color: white;
+    font-size: 120%;
+    font-weight: bold;
   }
 }
 
 .box-content {
   font-size: 93%;
+  color: black;
   margin: 0;
   padding: .5em;
   padding-top: .25em;
-  padding-bottom: 10em;
   line-height: 130%;
 }
 
@@ -98,7 +133,7 @@ hr {
   }
 
   a {
-    color: #435166;
+    color: $base-font-color;
   }
 
   h3 {
@@ -107,29 +142,57 @@ hr {
   }
 }
 
+.box-outer {
+  border: $base-border;
+  zoom: 100%;
+  margin-bottom: .5em;
+  padding-bottom: .5em;
+}
+
+#recent-images {
+
+  a {
+    display: block;
+  }
+
+  .box-content {
+    text-align: center;
+  }
+
+  li {
+    background: black;
+    margin: auto;
+    margin-bottom: .5em;
+    display: block;
+    width: 250px;
+    padding: 1px;
+  }
+}
+
+
 // Boards show
 
 #boardNav {
   font-size: 9pt;
-  color: #89A;
+  color: $base-primary-color;
   display: block;
-  position: absolute;
+  position: relative;
 
   a {
     font-weight: normal;
     padding: 1px;
     text-decoration: none;
-    color: #34345C;
+    color: $base-font-color;
   }
 }
 
 .boardBanner {
   text-align: center;
-  color: #313c4c;
+  color: $base-font-color;
   clear: both;
 
   #boardCnt {
-    border: 1px solid #34345C;
+    border: $base-border;
     margin: 5px auto;
     width: 300px;
     height: 100px;
@@ -156,5 +219,10 @@ hr {
 }
 
 .board {
+  clear: both;
+}
+
+.thread {
+  margin: 0px;
   clear: both;
 }
