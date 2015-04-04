@@ -3,13 +3,20 @@
 @import "base/grid-settings";
 @import "neat";
 @import "base/base";
+@import "variables";
 @import "footer";
 
-$base-primary-color: #5F9EA0;
-$base-secondary-color: #FAF3DD;
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 
 body {
+  height: 100%;
   background-image: linear-gradient(to top, #5F9EA0 0%, #FAF3DD 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .alert-notice {
@@ -18,11 +25,26 @@ body {
 
 .outer-container {
   @include outer-container;
+  min-height: 100%;
+}
+
+.board-wrap {
+  min-height: 100%
 }
 
 .index-container {
   @include span-columns(8);
   @include shift(2);
+}
+
+#main {
+  width: 100%;
+  overflow: auto;
+  padding-bottom: $footer-height;
+}
+
+.error-container {
+  text-align: center
 }
 
 .inner-container {
@@ -172,11 +194,16 @@ div {
 
 // Boards show
 
-#boardNav {
+.boardNav {
   font-size: 9pt;
   color: $base-primary-color;
   display: block;
   position: relative;
+
+  .braces {
+    color: black;
+    font-weight: bold;
+  }
 
   a {
     font-weight: normal;

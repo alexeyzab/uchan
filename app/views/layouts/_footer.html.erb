@@ -1,20 +1,15 @@
-<footer class="footer-2" role="contentinfo">
-  <div class="footer-logo">
-    <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">
-  </div>
+<footer class="footer" role="contentinfo">
 
   <ul>
-    <li><%= link_to "Home", root_path %></li>
+    <li class="fill"></li>
+    <li class="first"><%= link_to "Home", root_path %></li>
     <li><%= link_to "FAQ", page_path("faq") %></li>
     <li><%= link_to "Rules", page_path("rules") %></li>
   </ul>
 
   <div class="footer-secondary-links">
-    <ul>
-      <li><%= link_to "About", page_path("about") %></li>
-      <li><%= link_to "Contact", page_path("contact") %></li>
-    </ul>
-
+    <%= link_to "About", page_path("about") %> •
+    <%= link_to "Contact", page_path("contact") %>
   </div>
 </footer>
 

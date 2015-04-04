@@ -8,15 +8,17 @@
 </head>
 <body>
 
-  <div class="wrapper-for-content-outside-of-footer">
-      <div class="index-container">
-        <% flash.each do |message_type, message| %>
-          <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-        <% end %>
-      </div>
-    <%= yield %>
+  <div class="board-wrap">
+    <div class="error-container">
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
+    </div>
+    <div id="main">
+      <%= yield %>
+    </div>
   </div>
 
-  <%= render "layouts/footer" %>
+  <%= render "layouts/board_footer" %>
 </body>
 </html>

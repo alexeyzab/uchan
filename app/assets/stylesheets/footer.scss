@@ -1,155 +1,59 @@
-@import "normalize-rails";
-@import "bourbon";
-@import "base/grid-settings";
-@import "neat";
-@import "base/base";
+@import "variables";
 
-// Footer styles
-
-// Uncomment this for a sticky footer.
-
-.wrapper-for-content-outside-of-footer {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto -4em;
+.board-footer {
+  height: $footer-height;
+  position: relative;
+  margin-top: -$footer-height;
+  clear: both;
 }
 
-html, body {
-  height: 100%;
-}
+.footer {
+  text-align: center;
+  height: $footer-height;
+  position: relative;
+  margin-top: -$footer-height;
+  clear: both;
 
-.wrapper-for-content-outside-of-footer:after {
-  content: "";
-  display: block;
-}
-
-.footer-2, .wrapper-for-content-outside-of-footer:after {
-  height: 17em;
-
-  @include media($large-screen) {
-    height: 4em;
+  a {
+    color: $base-secondary-color;
   }
-}
-
-.footer-2 {
-
-////////////////////////////////////////////////////////////////
-
-  $base-spacing: 1.5em !default;
-  $base-accent-color: CadetBlue !default;
-  $medium-screen: em(640) !default;
-  $large-screen: em(860) !default;
 
   ul {
-    margin: 0;
-    padding: 0;
-    line-height: 1.5em;
+    border-top: 1px solid;
+    display: table;
+    margin: auto;
+    width: 634px;
   }
 
   li {
-    list-style: none;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-////////////////////////////////////////////////////////////////
-
-  $footer-background: darken($base-accent-color, 25%);
-  $footer-color: white;
-  $footer-link-color: transparentize($footer-color, 0.6);
-  $footer-disclaimer-color: transparentize($footer-color, 0.6);
-
-  background: $footer-background;
-  padding: $base-spacing;
-  width: 100%;
-  display: inline-block;
-
-  .footer-logo {
-    margin-right: 1em;
-    margin-bottom: 1em;
-
-    @include media($large-screen) {
-      float: left;
-      margin-bottom: 0;
-    }
-  }
-
-  .footer-logo img {
-    height: 1.6em;
-  }
-
-  ul {
-    margin-bottom: 1em;
-
-    @include media($large-screen) {
-      float: left;
-      line-height: 1.8em;
-      margin-left: 1em;
-      margin-bottom: 0;
-    }
-  }
-
-  ul li {
-    font-weight: 800;
+    display: block;
+    float: left;
+    border: 1px solid;
+    padding-left: 1em;
     padding-right: 1em;
-
-    @include media($large-screen) {
-      display: inline;
-      text-align: left;
-    }
+    padding-bottom: 2px;
+    border-left: none;
+    margin-top: -1px;
+    padding-top: 2px;
+    background: darken($base-primary-color, 10%);
   }
 
-  ul li a {
-    color: $footer-link-color;
+  .fill {
+    border: 0;
+    padding-bottom: 4px;
+    border-top: 1px solid;
+    width: 215.5px;
+    background: none;
+  }
 
-    &:focus,
-    &:hover {
-      color: transparentize($footer-color, 0);
-    }
+  .first {
+    border-left: 1px solid;
   }
 
   .footer-secondary-links {
-    @include media($large-screen) {
-      float: right;
-    }
-
-    li {
-      font-size: 0.8em;
-      font-weight: 400;
-    }
-
-    ul.footer-social {
-      margin-top: 1em;
-
-      @include media($large-screen) {
-        float: right;
-        margin-top: 0;
-      }
-
-      li {
-        font-size: 1em;
-        float: left;
-        line-height: 0;
-        padding-right: 0.7em;
-
-        &:last-child {
-          padding-right: 0;
-        }
-      }
-
-      img {
-        height: 1.6em;
-        opacity: 0.7;
-        padding: 1px;
-
-        &:focus,
-        &:hover {
-          opacity: 1;
-        }
-      }
-    }
+    font-size: 11px;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
   }
 }

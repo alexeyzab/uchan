@@ -1,8 +1,11 @@
-<div id="boardNav">
+<div class="boardNav">
   <span class="boardList">
-    <% @boards.each do |board| %>
-      /<%= link_to board.name, board_path(board) %>/
-    <% end %>
+    <span class="braces">
+      [<% @boards.each do |board| %>
+      /<%= link_to board.name, board_path(board) %>
+      <% end %>]
+    </span>
+    <span class="braces">[<%= link_to "Home", root_path %>]</span>
   </span>
 </div>
 
@@ -35,3 +38,5 @@
     </div>
   <% end %>
 </div>
+
+<hr />
