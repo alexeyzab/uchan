@@ -1,6 +1,18 @@
 require "rails_helper"
 
 describe TopicsController do
+
+  describe "#show" do
+    it "shows the particular topic" do
+      board = create(:board)
+      topic = create(:topic, board: board)
+
+      get :show, { id: topic.id, board_id: board.id }
+
+      expect(response.status).to eq (200)
+    end
+  end
+
   describe "#create" do
     context "with valid params" do
       it "creates a topic" do
