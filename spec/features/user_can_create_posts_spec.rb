@@ -32,6 +32,6 @@ feature "user can create a post inside a topic" do
     click_on "Create Post"
 
     expect(page).to have_content("Post created!")
-    expect(page).to have_content("Image uploaded successfully.")
+    expect(page).to have_content("Image successfully uploaded!")
   end
 end

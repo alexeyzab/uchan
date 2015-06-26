@@ -8,7 +8,10 @@ class PostsController < ApplicationController
   def create
     @board = Board.find(params[:board_id])
     @post = @topic.posts.create(post_params)
-    if @topic.save
+    if @topic.save && @post.post_image?
+      flash[:notice] = "Post created! Image successfully uploaded!"
+      redirect_to board_topic_path(@board, @topic)
+    elsif @topic.save
       flash[:notice] = "Post created!"
       redirect_to board_topic_path(@board, @topic)
     else

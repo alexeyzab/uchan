@@ -67,19 +67,25 @@
           <span class="dateTime"><%= post.created_at %></span>
           <span class="postNum Desktop">No.<%= post.id %></span>
         </div>
+      <% unless post.post_image? %>
+        <blockquote class="postMessage" id="m<%= post.id %>">
+          <%= post.post_description %>
+        </blockquote>
+      <% else %>
         <div class="file" id="f<%= post.id %>">
           <div class="fileText" id="fT<%= post.id %>">
             File:
-            <a href="placeholder"></a>
-            (455 KB, 1920,756)
+            <%= post.post_image_file_name %>
+            <%= post.post_image_file_size %>KB
           </div>
-          <a class="fileThumb" <%= image_tag post.post_image.url %>>
+          <a class="fileThumb">
             <%= image_tag post.post_image.url(:thumb) %>
           </a>
-          <blockquote class="postMessage" id="m<%= post.id %>">
-            <%= post.post_description %>
-          </blockquote>
         </div>
+        <blockquote class="postMessage" id="m<%= post.id %>">
+          <%= post.post_description %>
+        </blockquote>
+      <% end %>
       </div>
     </div>
   <% end %>
