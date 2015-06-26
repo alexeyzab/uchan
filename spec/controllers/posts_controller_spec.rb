@@ -12,13 +12,22 @@ describe PostsController do
 
         expect(Post.count).to eq(1)
       end
+
+      it "allows you to upload an image" do
+        board = create(:board)
+        topic = create(:topic, board_id: board.id)
+
+        post :create, { topic_id: topic.id, board_id: board.id, post: { post_title: "Test post", post_description: "Test post description", post_image: fixture_file_upload("#{Rails.root}/spec/support/test.jpg", "image/jpg") } }
+
+        expect(Post.count).to eq(1)
+      end
     end
 
     context "with invalid params" do
       it "doesn't create a topic" do
         board = create(:board)
         topic = create(:topic, board_id: board.id)
-        
+
         post :create, { topic_id: topic.id, board_id: board.id, post: { post_title: nil, post_description: nil } }
 
         expect(Post.count).to eq(0)

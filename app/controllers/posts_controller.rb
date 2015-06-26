@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:post_title, :post_description)
+    params.require(:post).permit(:post_title, :post_description, :post_image)
   end
 
   def get_topic

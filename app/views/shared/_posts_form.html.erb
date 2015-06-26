@@ -1,5 +1,6 @@
 <%= simple_form_for([@board, @topic, @post]) do |f| %>
   <%= f.input :post_title %>
   <%= f.input :post_description %>
+  <%= f.input :post_image, as: :file %>
   <%= f.submit "Create Post" %>
 <% end %>

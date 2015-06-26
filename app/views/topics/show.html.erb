@@ -30,5 +30,58 @@
 
 <hr />
 
-<%= @topic.thread_name %>
-<%= @topic.description %>
+<div class="board">
+<div class="thread">
+  <div class="postContainer opContainer" id="pc<%= @topic.id %>">
+    <div id="p<%= @topic.id %>", class="post op">
+      <div class="file" id="f<%= @topic.id %>">
+        <div class="fileText" id="fT<%= @topic.id %>">
+          File:
+          <a href="placeholder"></a>
+           (450 KB, 1920x768)
+        </div>
+        <a class="fileThumb" href="placeholder"></a>
+      </div>
+      <div class="postInfo desktop" id="pi<%= @topic.id %>">
+        <span class="subject"><%= @topic.thread_name %></span>
+        <span class="nameBlock">
+          <span class="name">Anonymous</span>
+        </span>
+        <span class="dateTime"><%= @topic.created_at %></span>
+        <span class="postNum desktop">No.<%= @topic.id %></span>
+      </div>
+      <blockquote class="postMessage" id="m<%= @topic.id %>">
+        <%= @topic.description %>
+      </blockquote>
+    </div>
+  </div>
+  <% @topic.posts.each do |post| %>
+    <div class="postContainer replyContainer" id="pc<%= post.id %>">
+      <div class="sideArrows" id="sa<%= post.id %>">>></div>
+      <div id="p<%= post.id %>" class="post reply">
+        <div class="postInfo desktop" id="pi<%= post.id %>">
+          <span class="subject"><%= post.post_title %></span>
+          <span class="nameBlock">
+            <span class="name">Anonymous</span>
+          </span>
+          <span class="dateTime"><%= post.created_at %></span>
+          <span class="postNum Desktop">No.<%= post.id %></span>
+        </div>
+        <div class="file" id="f<%= post.id %>">
+          <div class="fileText" id="fT<%= post.id %>">
+            File:
+            <a href="placeholder"></a>
+            (455 KB, 1920,756)
+          </div>
+          <a class="fileThumb" <%= image_tag post.post_image.url %>>
+            <%= image_tag post.post_image.url(:thumb) %>
+          </a>
+          <blockquote class="postMessage" id="m<%= post.id %>">
+            <%= post.post_description %>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>
