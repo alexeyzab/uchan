@@ -51,43 +51,45 @@
         <span class="postNum desktop">No.<%= @topic.id %></span>
       </div>
       <blockquote class="postMessage" id="m<%= @topic.id %>">
-        <%= @topic.description %>
+        <%= simple_format @topic.description %>
       </blockquote>
     </div>
   </div>
   <% @topic.posts.each do |post| %>
-    <div class="postContainer replyContainer" id="pc<%= post.id %>">
-      <div class="sideArrows" id="sa<%= post.id %>">>></div>
-      <div id="p<%= post.id %>" class="post reply">
-        <div class="postInfo desktop" id="pi<%= post.id %>">
-          <span class="subject"><%= post.post_title %></span>
-          <span class="nameBlock">
-            <span class="name">Anonymous</span>
-          </span>
-          <span class="dateTime"><%= post.created_at %></span>
-          <span class="postNum Desktop">No.<%= post.id %></span>
-        </div>
-      <% unless post.post_image? %>
-        <blockquote class="postMessage" id="m<%= post.id %>">
-          <%= post.post_description %>
-        </blockquote>
-      <% else %>
-        <div class="file" id="f<%= post.id %>">
-          <div class="fileText" id="fT<%= post.id %>">
-            File:
-            <%= post.post_image_file_name %>
-            <%= post.post_image_file_size %>KB
+    <% unless post.post_description.nil? %>
+      <div class="postContainer replyContainer" id="pc<%= post.id %>">
+        <div class="sideArrows" id="sa<%= post.id %>">>></div>
+        <div id="p<%= post.id %>" class="post reply">
+          <div class="postInfo desktop" id="pi<%= post.id %>">
+            <span class="subject"><%= post.post_title %></span>
+            <span class="nameBlock">
+              <span class="name">Anonymous</span>
+            </span>
+            <span class="dateTime"><%= post.created_at %></span>
+            <span class="postNum Desktop">No.<%= post.id %></span>
           </div>
-          <a class="fileThumb">
-            <%= image_tag post.post_image.url(:thumb) %>
-          </a>
+        <% unless post.post_image? %>
+          <blockquote class="postMessage" id="m<%= post.id %>">
+            <%= simple_format post.post_description %>
+          </blockquote>
+        <% else %>
+          <div class="file" id="f<%= post.id %>">
+            <div class="fileText" id="fT<%= post.id %>">
+              File:
+              <%= link_to "#{post.post_image_file_name}", post.post_image.url(:original) %>
+              <%= post.post_image_file_size %>KB
+            </div>
+            <a class="fileThumb">
+              <%= image_tag post.post_image.url(:thumb) %>
+            </a>
+          </div>
+          <blockquote class="postMessage" id="m<%= post.id %>">
+            <%= post.post_description %>
+          </blockquote>
+        <% end %>
         </div>
-        <blockquote class="postMessage" id="m<%= post.id %>">
-          <%= post.post_description %>
-        </blockquote>
-      <% end %>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
 </div>

@@ -16,7 +16,7 @@ class PostsController < ApplicationController
       redirect_to board_topic_path(@board, @topic)
     else
       flash[:error] = @post.errors.full_messages.to_sentence
-      redirect_to board_topic_path(@board, @topic)
+      redirect_to board_topic_path(@board, @topic, :post => params[:post])
     end
   end
 

@@ -14,7 +14,8 @@ html {
 
 body {
   height: 100%;
-  background-image: linear-gradient(to top, #5F9EA0 0%, #FAF3DD 100%);
+  // background-image: linear-gradient(to top, #5F9EA0 0%, #FAF3DD 100%);
+  background-color: #EEF2FF;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -29,7 +30,8 @@ body {
 }
 
 .board-wrap {
-  min-height: 100%
+  min-height: 100%;
+  margin-bottom: 30px;
 }
 
 .index-container {
@@ -252,6 +254,9 @@ div {
 .thread {
   margin: 0;
   clear: both;
+  :nth-of-type(2)>.reply {
+    margin-top: 2px!important;
+  }
 }
 
 .opContainer {
@@ -267,6 +272,8 @@ div {
   overflow: hidden;
   .file {
     display: block;
+    margin-left: 5px;
+    margin-right: 5px;
     .fileThumb {
       float: left;
       margin-left: 20px;
@@ -282,6 +289,12 @@ div {
   .postInfo {
     width: auto;
     display: inline;
+    margin-left: 5px;
+    margin-right: 5px;
+    span.subject {
+      color: #0F0C5D;
+      font-weight: bold;
+    }
     .nameBlock {
       display: inline-block;
       .name {
@@ -290,7 +303,7 @@ div {
       }
     }
   }
-  .postMessage {
+  blockquote.postMessage {
     display: block;
   }
 }
