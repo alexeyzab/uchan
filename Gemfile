@@ -16,7 +16,7 @@ gem "refills"
 gem "sass-rails", "~> 5.0"
 gem "simple_form"
 gem "uglifier"
-gem "unicorn"
+gem "passenger"
 
 group :development do
   gem "spring"
