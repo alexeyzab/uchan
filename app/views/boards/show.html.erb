@@ -36,7 +36,7 @@
       <div class="postContainer opContainer" id="pc<%= topic.id %>">
         <div id="p<%= topic.id %>" class="post op">
           <div class="file" id="f<%= topic.id %>">
-            <div class="fileText" id="ft<%= topic.id %>">
+            <div class="fileText" id="fT<%= topic.id %>">
               File:
               filelink.jpg
               (size KB, 250x250)
@@ -50,7 +50,7 @@
             </span>
             <span class="dateTime"><%= topic.created_at %></span>
             <span class="postNum desktop">No.<%= topic.id %>
-              <span>[<%= link_to "Reply", board_topic_path(@board, topic) %>]</span>
+            <span>[<%= link_to "Reply", board_topic_path(@board, topic) %>]</span>
             </span>
           </div>
           <blockquote class="postMessage" id="m<%= topic.id %>">
@@ -58,10 +58,41 @@
           </blockquote>
         </div>
       </div>
-      Now we need to iterate over scope of first 5 posts of this topic
+      <% topic.last_five_posts.each do |post| %>
+        <div class="postContainer replyContainer" id="pc<%= post.id %>">
+          <div class="sideArrows" id="sa<%= post.id %>">>></div>
+          <div id="p<%= post.id %>" class="post reply">
+            <div class="postInfo desktop" id="pi<%= post.id %>">
+              <span class="subject"><%= post.post_title %></span>
+              <span class="nameBlock">
+                <span class="name">Anonymous</span>
+              </span>
+              <span class="dateTime"><%= post.created_at %></span>
+              <span class="postNum desktop">No.<%= post.id %></span>
+            </div>
+            <% unless post.post_image? %>
+              <blockquote class="postMessage" id="m<%= post.id %>">
+                <%= post.post_description %>
+              </blockquote>
+            <% else %>
+              <div class="file" id="f<%= post.id %>">
+                <div class="fileText" id="fT<%= post.id %>">
+                  File:
+                  <%= link_to "#{post.post_image_file_name}", post.post_image.url(:original) %>
+                  <%= post.post_image_file_size %>KB
+                </div>
+                <a class="fileThumb">
+                  <%= image_tag post.post_image.url(:thumb) %>
+                </a>
+                <blockquote class="postMessage" id="m<%= post.id %>">
+                  <%= post.post_description %>
+                </blockquote>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
       <hr />
     </div>
   <% end %>
 </div>
-
-<hr />

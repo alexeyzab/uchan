@@ -7,4 +7,17 @@ describe Topic, :type => :model do
        is_at_most(100) }
   it { should validate_length_of(:description).
        is_at_most(500) }
+
+  describe ".last_five_posts" do
+    it "shows the last five posts for each topic" do
+      topic = create(:topic)
+      last_five_posts = 5.times do
+        create(:post, post_description: "Hi there", topic: topic)
+      end
+
+      posts = topic.last_five_posts
+
+      expect(posts.count).to eq(last_five_posts)
+    end
+  end
 end
