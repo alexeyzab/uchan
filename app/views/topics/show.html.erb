@@ -37,10 +37,12 @@
       <div class="file" id="f<%= @topic.id %>">
         <div class="fileText" id="fT<%= @topic.id %>">
           File:
-          <a href="placeholder"></a>
-           (450 KB, 1920x768)
+          <%= link_to "#{@topic.topic_image_file_name}", @topic.topic_image.url(:original) %>
+          <%= @topic.topic_image_file_size %>KB
         </div>
-        <a class="fileThumb" href="placeholder"></a>
+        <a class="fileThumb" >
+          <%= image_tag @topic.topic_image.url(:thumb) %>
+        </a>
       </div>
       <div class="postInfo desktop" id="pi<%= @topic.id %>">
         <span class="subject"><%= @topic.thread_name %></span>

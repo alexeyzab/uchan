@@ -38,10 +38,12 @@
           <div class="file" id="f<%= topic.id %>">
             <div class="fileText" id="fT<%= topic.id %>">
               File:
-              filelink.jpg
-              (size KB, 250x250)
+              <%= link_to "#{topic.topic_image_file_name}", topic.topic_image.url(:original) %>
+              <%= topic.topic_image_file_size %>KB
             </div>
-            <a class="fileThumb"></a>
+            <a class="fileThumb">
+              <%= image_tag topic.topic_image.url(:thumb) %>
+            </a>
           </div>
           <div class="postInfo desktop" id="pi<%= topic.id %>">
             <span class="subject"><%= topic.thread_name %></span>

@@ -1,3 +1,5 @@
+include ActionDispatch::TestProcess
+
 FactoryGirl.define do
 
   sequence(:name) { |n| "Board #{n}" }
@@ -15,6 +17,7 @@ FactoryGirl.define do
     board
     thread_name
     description "Topic description"
+    topic_image { fixture_file_upload("#{Rails.root}/spec/support/test.jpg", "image/jpg") }
   end
 
   factory :post do

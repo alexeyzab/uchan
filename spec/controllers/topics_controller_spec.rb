@@ -18,7 +18,8 @@ describe TopicsController do
       it "creates a topic" do
         board = create(:board)
         post :create, { board_id: board.id, topic: { thread_name: "Test topic",
-                                                      description: "Description" } }
+                                                      description: "Description",
+                                                      topic_image: fixture_file_upload("#{Rails.root}/spec/support/test.jpg", "image/jpg") } }
 
         expect(Topic.count).to eq(1)
       end

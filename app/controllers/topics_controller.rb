@@ -27,7 +27,7 @@ class TopicsController < ApplicationController
   private
 
   def topic_params
-    params.require(:topic).permit(:thread_name, :description)
+    params.require(:topic).permit(:thread_name, :description, :topic_image)
   end
 
   def get_board
