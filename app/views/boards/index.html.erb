@@ -41,11 +41,15 @@
           <h2>Recent Images</h2>
         </div>
         <div class="box-content">
+          <% @boards.sample(3).each do |board| %>
           <ul>
-            <li>Left</li>
-            <li>Left</li>
-            <li>Left</li>
+            <% unless board.posts.last.nil? %>
+              <% if board.posts.last.post_image? %>
+                <li><%= link_to "#{board.posts.last.post_image_file_name}", board.posts.last.post_image.url(:original) %> <%= image_tag board.posts.last.post_image(:thumb) %></li>
+              <% end %>
+            <% end %>
           </ul>
+          <% end %>
         </div>
       </div>
     </div>

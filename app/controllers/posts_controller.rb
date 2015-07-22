@@ -1,17 +1,17 @@
 class PostsController < ApplicationController
-  before_action :get_topic
+  before_action :get_topic, :get_board
 
   def new
     @post = @topic.posts.build(post_params)
   end
 
   def create
-    @board = Board.find(params[:board_id])
     @post = @topic.posts.create(post_params)
-    if @topic.save && @post.post_image?
+    @post.board_id = @board.id
+    if @post.save && @post.post_image?
       flash[:notice] = "Post created! Image successfully uploaded!"
       redirect_to board_topic_path(@board, @topic)
-    elsif @topic.save
+    elsif @post.save
       flash[:notice] = "Post created!"
       redirect_to board_topic_path(@board, @topic)
     else
@@ -28,5 +28,9 @@ class PostsController < ApplicationController
 
   def get_topic
     @topic = Topic.find(params[:topic_id])
+  end
+
+  def get_board
+    @board = Board.find(params[:board_id])
   end
 end

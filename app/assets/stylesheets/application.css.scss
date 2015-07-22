@@ -20,6 +20,12 @@ body {
   background-attachment: fixed;
 }
 
+li {
+  img {
+    margin-top: 3px;
+  }
+}
+
 .alert-notice {
   text-align: center;
 }
