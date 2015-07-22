@@ -57,53 +57,13 @@
           <h2>Latest Posts</h2>
         </div>
         <div class="box-content">
+          <% @boards.sample(10).each do |board| %>
           <ul>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
+          <% unless board.topics.last.nil? %>
+            <li><%= board.name %>: <%= link_to board.topics.last.thread_name, board_topic_path(board, board.topics.last) %></li>
           </ul>
-        </div>
-      </div>
-    </div>
-    <div class="box-outer right-box" id="popular-threads">
-      <div class="box-inner">
-        <div class="box-bar">
-          <h2>Popular Threads</h2>
-        </div>
-        <div class="box-content">
-          <ul>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="box-outer right-box">
-      <div class="box-inner">
-        <div class="box-bar">
-          <h2>Stats</h2>
-        </div>
-        <div class="box-content">
-          <ul>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-          </ul>
+          <% end %>
+          <% end %>
         </div>
       </div>
     </div>

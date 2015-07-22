@@ -24,4 +24,5 @@ describe Topic, :type => :model do
       expect(posts.count).to eq(last_five_posts)
     end
   end
+
 end
