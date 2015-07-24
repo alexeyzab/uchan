@@ -25,3 +25,4 @@
 
 # Ignore uploaded images
 public/system
+spec/support

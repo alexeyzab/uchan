@@ -14,6 +14,7 @@ gem "paperclip", "~> 4.2"
 gem "rails", "4.2.0"
 gem "refills"
 gem "sass-rails", "~> 5.0"
+gem 'seed_dump'
 gem "simple_form"
 gem "uglifier"
 gem "passenger"
