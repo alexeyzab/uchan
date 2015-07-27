@@ -10,6 +10,8 @@ class Topic < ActiveRecord::Base
   validates_attachment_file_name :topic_image, :matches => [/png\Z/, /gif\Z/,
                                                            /jpe?g\Z/, /JPG\Z/]
 
+  scope :order_topics, -> { includes(:posts).order("posts.created_at DESC") }
+
   def last_five_posts
     Post.where(:topic_id => self.id).last(5)
   end
