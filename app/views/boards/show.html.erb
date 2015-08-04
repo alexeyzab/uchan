@@ -30,6 +30,12 @@
 
 <hr />
 
+<div class="pagination">
+  <%= will_paginate @topics, :container => false %>
+</div>
+
+<hr />
+
 <div class="board">
   <% @topics.each do |topic| %>
     <div class="thread" id="t<%= topic.id %>">
@@ -97,4 +103,8 @@
       <hr />
     </div>
   <% end %>
+</div>
+
+<div class="pagination">
+  <%= will_paginate @topics, :container => false %>
 </div>

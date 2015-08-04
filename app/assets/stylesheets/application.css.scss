@@ -338,3 +338,18 @@ blockquote {
   -webkit-margin-start: 40px;
   -webkit-margin-end: 40px;
 }
+
+.pagination {
+  font-size: 13px!important;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 3px 7px;
+  float: left;
+  border: none;
+  background: #D6DAF0;
+  border-right: 1px solid #B7C5D9;
+  border-bottom: 1px solid #B7C5D9;
+  list-style: none;
+  overflow: hidden;
+  color: #89A;
+}
