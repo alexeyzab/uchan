@@ -21,7 +21,7 @@ class Topic < ActiveRecord::Base
   private
 
   def delete_last_topic
-    board = Board.find(self.board_id)
+    board = Board.find(self.board_id) if Board.any?
     if board.topics.count > 50
       board.topics.order_topics.last.destroy
     end
