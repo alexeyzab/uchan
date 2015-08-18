@@ -1,4 +1,6 @@
 class Topic < ActiveRecord::Base
+  after_create :delete_last_topic
+
   belongs_to :board
   has_many :posts
   validates :thread_name, presence: true, length: { maximum: 100 }
@@ -14,5 +16,14 @@ class Topic < ActiveRecord::Base
 
   def last_five_posts
     Post.where(:topic_id => self.id).last(5)
+  end
+
+  private
+
+  def delete_last_topic
+    board = Board.find(self.board_id)
+    if board.topics.count > 50
+      board.topics.order_topics.last.destroy
+    end
   end
 end

@@ -21,4 +21,22 @@ feature "user can create a new topic" do
     expect(page).to have_content("Thread name can't be blank")
     expect(page).to have_content("Description can't be blank")
   end
+
+  scenario "overwriting the oldest topic" do
+    board = create(:board)
+    oldest_topic = create(:topic, board: board)
+    49.times do
+      create(:topic, board: board)
+    end
+    visit board_path(board)
+
+    fill_form(:topic, { thread_name: "My topic", description: "This is my topic" })
+    attach_file "topic_topic_image", "#{Rails.root}/spec/support/test.jpg"
+    click_on "Create Thread"
+
+    visit board_path(board)
+    first(:link, "5").click
+    expect(page).to_not have_content(oldest_topic.thread_name)
+    expect(page).to_not have_link("6")
+  end
 end
