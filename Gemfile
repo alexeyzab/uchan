@@ -7,6 +7,7 @@ gem "coffee-rails", "~> 4.1.0"
 gem "flutie"
 gem "high_voltage"
 gem "jquery-rails"
+gem "kaminari"
 gem "neat", "~> 1.7.0"
 gem "normalize-rails", "~> 3.0.0"
 gem "pg"
@@ -18,7 +19,6 @@ gem 'seed_dump'
 gem "simple_form"
 gem "uglifier"
 gem "passenger"
-gem "will_paginate"
 
 group :development do
   gem "spring"

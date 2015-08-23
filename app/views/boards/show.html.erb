@@ -30,10 +30,6 @@
 
 <hr />
 
-<div class="pagination">
-  <%= will_paginate @topics, :container => false %>
-</div>
-
 <hr />
 
 <div class="board">
@@ -106,5 +102,5 @@
 </div>
 
 <div class="pagination">
-  <%= will_paginate @topics, :container => false %>
+  <%= paginate @topics %>
 </div>

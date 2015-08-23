@@ -8,7 +8,7 @@ class BoardsController < ApplicationController
   def show
     @board = Board.find(params[:id])
     @boards = Board.all
-    @topics = @board.topics.order_topics.paginate(:page => params[:page], :per_page => 10)
+    @topics = @board.topics.bump_order.page(params[:page])
     @topic = @board.topics.build
   end
 

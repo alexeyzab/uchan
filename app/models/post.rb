@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   belongs_to :board
-  belongs_to :topic
+  belongs_to :topic, touch: true
   validates :post_title, length: { maximum: 140 }
   validates :post_description, presence: true, length: { maximum: 500 }
   has_attached_file :post_image, :styles => { :medium => "300x300>", :thumb =>

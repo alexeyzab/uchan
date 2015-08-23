@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20150714215433) do
     t.datetime "updated_at",              null: false
     t.string   "post_title"
     t.text     "post_description"
-    t.integer  "topic_id"
     t.integer  "board_id"
+    t.integer  "topic_id"
     t.string   "post_image_file_name"
     t.string   "post_image_content_type"
     t.integer  "post_image_file_size"

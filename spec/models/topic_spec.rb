@@ -25,4 +25,15 @@ describe Topic, :type => :model do
     end
   end
 
+  describe ".destroy_last_topic" do
+    it "maintains the amount of topics at 50" do
+      50.times do
+        create(:topic)
+      end
+
+      Topic.create
+      expect(Topic.count).to eq(50)
+    end
+  end
+
 end
