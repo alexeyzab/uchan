@@ -21,5 +21,9 @@ FactoryGirl.define do
   end
 
   factory :post do
+    board
+    topic
+    post_title "Hi there"
+    post_description
   end
 end

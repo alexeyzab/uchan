@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :get_topic, :get_board
+  before_filter :check_if_bumplimit, :only => :create
 
   def new
     @post = @topic.posts.build(post_params)
@@ -21,6 +22,13 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def check_if_bumplimit
+    if @topic.bumplimit?
+      flash[:error] = "This thread has reached bumplimit, you can't make a new post"
+      redirect_to board_topic_path(@board, @topic)
+    end
+  end
 
   def post_params
     params.require(:post).permit(:post_title, :post_description, :post_image)

@@ -19,6 +19,12 @@ class Topic < ActiveRecord::Base
     Post.where(:topic_id => self.id).last(5)
   end
 
+  def bumplimit?
+    if self.posts.count > 499
+      return true
+    end
+  end
+
   private
 
   def delete_last_topic
