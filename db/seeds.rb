@@ -1,3 +1,4 @@
+include ActionDispatch::TestProcess
 Post.destroy_all
 Topic.destroy_all
 Board.destroy_all
