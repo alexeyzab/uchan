@@ -24,6 +24,6 @@
 !.elasticbeanstalk/*.global.yml
 
 # Ignore uploaded images
-public/system
+public/system/**
 public/assets/**
 spec/support
