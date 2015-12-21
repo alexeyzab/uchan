@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  port: 5432
+  username: ENV["DB_USER"]
+  password: ENV["DB_PASS"]
+
+
+
+development:
+  <<: *default
+  database: uchan_development
+
+test:
+  <<: *default
+  database: uchan_test
+
+production:
+  <<: *default
+  database: uchan_production
+  username: ENV["DB_USER"]

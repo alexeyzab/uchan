@@ -12,9 +12,6 @@
 !/log/.keep
 /tmp
 
-# Ignore database configuration
-/config/database.yml
-
 # Ignore dotenv configuration
 .env
 
