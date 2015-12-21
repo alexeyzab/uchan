@@ -15,25 +15,20 @@ describe Topic, :type => :model do
   describe ".last_five_posts" do
     it "shows the last five posts for each topic" do
       topic = create(:topic)
-      last_five_posts = 5.times do
-        create(:post, post_description: "Hi there", topic: topic)
-      end
+      posts = create_list(:post, 5, topic: topic)
 
-      posts = topic.last_five_posts
-
-      expect(posts.count).to eq(last_five_posts)
+      expect(topic.last_five_posts).to eq(posts)
     end
   end
 
-  describe ".destroy_last_topic" do
-    it "maintains the amount of topics at 50" do
-      50.times do
-        create(:topic)
-      end
+  describe ".delete_last_topic" do
+    it "gets called before saving the record" do
+      topic = build(:topic)
+      allow(topic).to receive(:delete_last_topic)
 
-      Topic.create
-      expect(Topic.count).to eq(50)
+      topic.save
+
+      expect(topic).to have_received(:delete_last_topic)
     end
   end
-
 end
