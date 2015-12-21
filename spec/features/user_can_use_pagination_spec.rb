@@ -4,9 +4,7 @@ feature "user can use pagination to navigate" do
   scenario "to see the next 10 topics" do
     board = create(:board)
     oldest_topic = create(:topic, board: board, thread_name: "Oldest topic title")
-    10.times do
-      create(:topic, board: board, thread_name: "This is thread #{rand(1..15)}")
-    end
+    create_list(:topic, 10, board: board)
     visit board_path(board)
 
     click_link "Next"
