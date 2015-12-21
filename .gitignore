@@ -22,5 +22,4 @@
 
 # Ignore uploaded images
 public/system/**
-public/assets/**
 spec/support
