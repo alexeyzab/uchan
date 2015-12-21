@@ -21,6 +21,15 @@ describe Topic, :type => :model do
     end
   end
 
+  describe ".bumplimit?" do
+    it "returns true if the topic has 500 posts" do
+      topic = create(:topic)
+      allow(topic).to receive_message_chain(:posts, :count).and_return(500)
+
+      expect(topic.bumplimit?).to eq true
+    end
+  end
+
   describe ".delete_last_topic" do
     it "gets called before saving the record" do
       topic = build(:topic)
