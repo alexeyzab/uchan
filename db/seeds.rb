@@ -15,13 +15,13 @@ post_descriptions = ["I love talking about cats on every board! Hire me, please?
 Board.all.each do |board|
   50.times do
     Topic.create!([{ thread_name: "#{topic_names.sample(1).join} # #{rand(1..100)}", description: "#{topic_descriptions.sample(1).join}", board_id: board.id, topic_image:
-                     fixture_file_upload("#{Rails.root}/spec/support/#{rand(1..30)}.jpg",
+                     fixture_file_upload("#{Rails.root}/public/images/#{rand(1..30)}.jpg",
                                          "image/jpg") }])
   end
 end
 
 Topic.all.each do |topic|
   10.times do
-    Post.create!([{ post_title: "#{post_titles.sample(1).join}", post_description: "#{post_descriptions.sample(1).join}", topic_id: topic.id, board_id: topic.board_id, post_image: fixture_file_upload("#{Rails.root}/spec/support/#{rand(1..30)}.jpg", "image/jpg") }])
+    Post.create!([{ post_title: "#{post_titles.sample(1).join}", post_description: "#{post_descriptions.sample(1).join}", topic_id: topic.id, board_id: topic.board_id, post_image: fixture_file_upload("#{Rails.root}/public/images/#{rand(1..30)}.jpg", "image/jpg") }])
   end
 end
