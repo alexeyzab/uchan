@@ -16,13 +16,11 @@ class Topic < ActiveRecord::Base
   scope :bump_order, -> { order("updated_at DESC") }
 
   def last_five_posts
-    Post.where(:topic_id => self.id).last(5)
+    Post.where(topic_id: self.id).last(5)
   end
 
   def bumplimit?
-    if self.posts.count > 499
-      return true
-    end
+    posts.count > 499
   end
 
   private
