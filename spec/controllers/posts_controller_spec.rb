@@ -4,7 +4,7 @@ describe PostsController do
 
   describe "#create" do
     context "with valid input" do
-      it "creates a topic" do
+      it "creates a post" do
         board = create(:board)
         topic = create(:topic, board_id: board.id)
 
@@ -21,10 +21,20 @@ describe PostsController do
 
         expect(Post.count).to eq(1)
       end
+
+      it "checks if the topic has reached bumplimit before create action" do
+        board = create(:board)
+        topic = create(:topic, board_id: board.id)
+        allow(controller).to receive(:check_if_bumplimit)
+
+        post :create, { topic_id: topic.id, board_id: board.id, post: { post_title: "Test post", post_description: "Test post description" } }
+
+        expect(controller).to have_received(:check_if_bumplimit)
+      end
     end
 
     context "with invalid params" do
-      it "doesn't create a topic" do
+      it "doesn't create a post" do
         board = create(:board)
         topic = create(:topic, board_id: board.id)
 
