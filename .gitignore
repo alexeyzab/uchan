@@ -23,3 +23,6 @@
 # Ignore uploaded images
 public/system/
 spec/support
+
+# Ignore generated JS
+public/assets/application-*.js
