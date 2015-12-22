@@ -27,3 +27,4 @@ spec/support
 # Ignore generated JS and CSS files
 public/assets/application-*.js
 public/assets/application-*.css
+public/assets

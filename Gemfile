@@ -14,6 +14,7 @@ gem "normalize-rails", "~> 3.0.0"
 gem "pg"
 gem "paperclip", "~> 4.2"
 gem "rails", "4.2.0"
+gem "rails_12factor"
 gem "refills"
 gem "sass-rails", "~> 5.0"
 gem "seed_dump"
@@ -47,5 +48,4 @@ group :test do
 end
 
 group :staging, :production do
-  gem "rails_12factor"
 end
