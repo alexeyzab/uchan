@@ -19,7 +19,7 @@ gem "sass-rails", "~> 5.0"
 gem "seed_dump"
 gem "simple_form"
 gem "uglifier"
-gem "passenger"
+gem "puma"
 
 group :development do
   gem "spring"
