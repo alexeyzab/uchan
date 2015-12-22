@@ -30,7 +30,7 @@ feature "User visits the main page" do
 
     click_link(board1.name)
     expect(page).to have_content(board1.name)
-    expect(page).to have_content("Start a New Thread")
+    expect(page).to have_content("Start a New Topic")
   end
 
   scenario "shows the static pages" do

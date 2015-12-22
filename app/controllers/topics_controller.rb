@@ -16,7 +16,7 @@ class TopicsController < ApplicationController
   def create
     @topic = @board.topics.create(topic_params)
     if @topic.save
-      flash[:notice] = "Thread created!"
+      flash[:notice] = "Topic created!"
       redirect_to board_topic_path(@board, @topic)
     else
       flash[:error] = @topic.errors.full_messages.to_sentence
@@ -27,7 +27,7 @@ class TopicsController < ApplicationController
   private
 
   def topic_params
-    params.require(:topic).permit(:thread_name, :description, :topic_image)
+    params.require(:topic).permit(:topic_name, :description, :topic_image)
   end
 
   def get_board

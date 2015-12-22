@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 
   def check_if_bumplimit
     if @topic.bumplimit?
-      flash[:error] = "This thread has reached bumplimit, you can't make a new post"
+      flash[:error] = "This topic has reached bumplimit, you can't make a new post"
       redirect_to board_topic_path(@board, @topic)
     end
   end

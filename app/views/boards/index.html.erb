@@ -55,7 +55,7 @@
     </div>
   </div>
   <div class="right-container">
-    <div class="box-outer right-box" id="recent-threads">
+    <div class="box-outer right-box" id="recent-topics">
       <div class="box-inner">
         <div class="box-bar">
           <h2>Latest Posts</h2>
@@ -64,7 +64,7 @@
           <% @boards.sample(10).each do |board| %>
           <ul>
           <% unless board.topics.last.nil? %>
-            <li><%= board.name %>: <%= link_to board.topics.last.thread_name, board_topic_path(board, board.topics.last) %></li>
+            <li><%= board.name %>: <%= link_to board.topics.last.topic_name, board_topic_path(board, board.topics.last) %></li>
           </ul>
           <% end %>
           <% end %>

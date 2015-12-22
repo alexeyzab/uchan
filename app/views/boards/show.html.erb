@@ -21,7 +21,7 @@
 <hr />
 
 <div id="togglePostForm">
-  [<%= link_to "Start a New Thread", "#" %>]
+  [<%= link_to "Start a New Topic", "#" %>]
 </div>
 
 <div id="form-container">
@@ -34,7 +34,7 @@
 
 <div class="board">
   <% @topics.each do |topic| %>
-    <div class="thread" id="t<%= topic.id %>">
+    <div class="topic" id="t<%= topic.id %>">
       <div class="postContainer opContainer" id="pc<%= topic.id %>">
         <div id="p<%= topic.id %>" class="post op">
           <div class="file" id="f<%= topic.id %>">
@@ -48,7 +48,7 @@
             </a>
           </div>
           <div class="postInfo desktop" id="pi<%= topic.id %>">
-            <span class="subject"><%= topic.thread_name %></span>
+            <span class="subject"><%= topic.topic_name %></span>
             <span class="nameBlock">
               <span class="name">Anonymous</span>
             </span>

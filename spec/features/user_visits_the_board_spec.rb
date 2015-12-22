@@ -8,7 +8,7 @@ feature "User visits the board" do
 
     visit board_path(board)
 
-    expect(page).to have_content(topic.thread_name)
-    expect(page).to have_content(topic2.thread_name)
+    expect(page).to have_content(topic.topic_name)
+    expect(page).to have_content(topic2.topic_name)
   end
 end

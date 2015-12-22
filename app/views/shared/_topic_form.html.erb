@@ -1,6 +1,6 @@
 <%= simple_form_for([@board, @topic]) do |f| %>
-  <%= f.input :thread_name %>
+  <%= f.input :topic_name %>
   <%= f.input :description %>
   <%= f.input :topic_image, as: :file %>
-  <%= f.submit "Create Thread" %>
+  <%= f.submit "Create Topic" %>
 <% end %>
