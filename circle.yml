@@ -1,13 +1,5 @@
 deployment:
   staging:
     branch: master
-    codedeploy:
-      uchan:
-        application_root: /
-        region: us-west-2
-        revision_location:
-          revision_type: S3
-          s3_location:
-            bucket: uchan-bucket
-            key_pattern: uchan-{BRANCH}-{SHORT_COMMIT}
-        deployment_group: uchan-deployment-group
+    heroku:
+      appname: uchan
