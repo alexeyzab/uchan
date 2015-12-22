@@ -24,5 +24,6 @@
 public/system/
 spec/support
 
-# Ignore generated JS
+# Ignore generated JS and CSS files
 public/assets/application-*.js
+public/assets/application-*.css
