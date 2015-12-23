@@ -39,6 +39,11 @@ GEM
     addressable (2.3.8)
     arel (6.0.0)
     awesome_print (1.6.1)
+    aws-sdk (1.66.0)
+      aws-sdk-v1 (= 1.66.0)
+    aws-sdk-v1 (1.66.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bourbon (4.2.3)
@@ -237,6 +242,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  aws-sdk (< 2.0)
   bourbon (~> 4.2.0)
   bundler-audit
   byebug
