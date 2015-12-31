@@ -15,11 +15,6 @@
 # Ignore dotenv configuration
 .env
 
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
-
 # Ignore uploaded images
 public/system/
 spec/support
