@@ -10,6 +10,7 @@ require 'paperclip/matchers'
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
+WebMock.disable_net_connect!(:allow => "codeclimate.com")
 
 ActiveRecord::Migration.maintain_test_schema!
 
