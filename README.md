@@ -1,6 +1,8 @@
 # Uchan
 
 [![Circle CI](https://circleci.com/gh/alexeyzab/uchan.svg?style=shield)](https://circleci.com/gh/alexeyzab/uchan)
+[![Code Climate](https://codeclimate.com/github/alexeyzab/uchan/badges/gpa.svg)](https://codeclimate.com/github/alexeyzab/uchan)
+[![Test Coverage](https://codeclimate.com/github/alexeyzab/uchan/badges/coverage.svg)](https://codeclimate.com/github/alexeyzab/uchan/coverage)
 
 This is a simplified version of an anonymous imageboard (like 2chan.net, etc.)
 
