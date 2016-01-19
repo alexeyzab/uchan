@@ -11,7 +11,7 @@ sample_name = ["Hi there!", "Oh, hi!", "Wow, what a great topic name", "This is
 sample_description = ["This is a great post", "This one is even better", "Not
                       sure how many posts I can come up with on my own", "This
                       is fun, sort of", "Gotta keep making posts", "And another
-                      one", "Good thing I have plenty of cat images, huh"]
+                      one", "Good thing I have plenty of TEST images, huh"]
 
 Board.all.each do |board|
   t = Topic.new({ topic_name: sample_name.sample, description: sample_description.sample, board_id: board.id })
