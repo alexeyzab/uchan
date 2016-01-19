@@ -12,7 +12,7 @@ describe Topic, :type => :model do
        allowing('image/png', 'image/gif', 'image/jpg').
        rejecting('text/plain', 'text/xml') }
 
-  describe ".last_five_posts" do
+  describe "#last_five_posts" do
     it "shows the last five posts for each topic" do
       topic = create(:topic)
       posts = create_list(:post, 5, topic: topic)
@@ -21,7 +21,7 @@ describe Topic, :type => :model do
     end
   end
 
-  describe ".bumplimit?" do
+  describe "#bumplimit?" do
     it "returns true if the topic has 500 posts" do
       topic = create(:topic)
       allow(topic).to receive_message_chain(:posts, :count).and_return(500)
