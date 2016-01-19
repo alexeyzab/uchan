@@ -23,6 +23,10 @@ class Topic < ActiveRecord::Base
     posts.count > 499
   end
 
+  def self.total_count
+    Topic.count
+  end
+
   private
 
   def delete_last_topic

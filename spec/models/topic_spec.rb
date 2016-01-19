@@ -30,7 +30,7 @@ describe Topic, :type => :model do
     end
   end
 
-  describe ".delete_last_topic" do
+  describe "#delete_last_topic" do
     it "gets called before saving the record" do
       topic = build(:topic)
       allow(topic).to receive(:delete_last_topic)
@@ -38,6 +38,14 @@ describe Topic, :type => :model do
       topic.save
 
       expect(topic).to have_received(:delete_last_topic)
+    end
+  end
+
+  describe ".total_count" do
+    it "calculates the total number of topics" do
+      create(:topic)
+
+      expect(Topic.total_count).to eq(1)
     end
   end
 end

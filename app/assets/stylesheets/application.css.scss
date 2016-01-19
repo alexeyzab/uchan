@@ -154,6 +154,11 @@ div {
   line-height: 130%;
 }
 
+.stat-cell {
+  display: inline-block;
+  width: 33%;
+}
+
 #boards {
   .column {
     float: left;

@@ -3,6 +3,7 @@ class BoardsController < ApplicationController
 
   def index
     @boards = Board.all
+    @total_topics = Topic.total_count
   end
 
   def show
