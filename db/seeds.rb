@@ -15,14 +15,14 @@ sample_description = ["This is a great post", "This one is even better", "Not
 
 Board.all.each do |board|
   t = Topic.new({ topic_name: sample_name.sample, description: sample_description.sample, board_id: board.id })
-  t.topic_image = File.open("#{Rails.root}/spec/support/#{rand(1..30)}.jpg")
+  t.topic_image = File.open("/spec/support/test.jpg")
   t.save
 end
 
 5.times do
   Topic.all.each do |topic|
     p = Post.new({ post_title: sample_name.sample, post_description: sample_description.sample, board_id: topic.board_id, topic_id: topic.id })
-    p.post_image = File.open("#{Rails.root}/spec/support/#{rand(1..30)}.jpg")
+    p.post_image = File.open("/spec/support/test.jpg")
     p.save
   end
 end
