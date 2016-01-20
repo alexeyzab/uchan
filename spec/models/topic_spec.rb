@@ -40,12 +40,4 @@ describe Topic, :type => :model do
       expect(topic).to have_received(:delete_last_topic)
     end
   end
-
-  describe ".total_count" do
-    it "calculates the total number of topics" do
-      create(:topic)
-
-      expect(Topic.total_count).to eq(1)
-    end
-  end
 end
