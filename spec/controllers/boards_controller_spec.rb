@@ -7,6 +7,13 @@ describe BoardsController do
 
       expect(response.status).to eq(200)
     end
+
+    it "shows the topic count" do
+      topic = create(:topic)
+      get :index
+
+      expect(assigns(:topics_count)).to eq(1)
+    end
   end
 
   describe "#show" do
