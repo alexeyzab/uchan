@@ -13,6 +13,11 @@ FactoryGirl.define do
     id
   end
 
+  factory :catalog do
+    board
+    id
+  end
+
   factory :topic do
     board
     topic_name
