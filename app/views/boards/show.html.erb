@@ -1,24 +1,4 @@
-<div class="boardNav">
-  <span class="boardList">
-    <span class="braces">
-      [<% @boards.each do |board| %>
-      /<%= link_to board.name, board_path(board) %>
-      <% end %>]
-    </span>
-    <span class="braces">[<%= link_to "Home", root_path %>]</span>
-  </span>
-</div>
-
-<div class="boardBanner">
-  <div id="boardCnt">
-    Placeholder
-  </div>
-  <div class="boardTitle">
-    <%= @board.name %>
-  </div>
-</div>
-
-<hr />
+<%= render "shared/board_navigation" %>
 
 <div id="togglePostForm">
   [<%= link_to "Start a New Topic", "#" %>]
@@ -29,7 +9,9 @@
 </div>
 
 <hr />
-
+<div id="ctrl-top" class="desktop">
+  [<%= link_to "Catalog", board_catalog_path(@board) %>]
+</div>
 <hr />
 
 <div class="board">

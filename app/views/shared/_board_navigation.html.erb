@@ -1,0 +1,21 @@
+<div class="boardNav">
+  <span class="boardList">
+    <span class="braces">
+      [<% @boards.each do |board| %>
+      /<%= link_to board.name, board_path(board) %>
+      <% end %>]
+    </span>
+    <span class="braces">[<%= link_to "Home", root_path %>]</span>
+  </span>
+</div>
+
+<div class="boardBanner">
+  <div id="boardCnt">
+    Placeholder
+  </div>
+  <div class="boardTitle">
+    <%= @board.name %>
+  </div>
+</div>
+
+<hr />
