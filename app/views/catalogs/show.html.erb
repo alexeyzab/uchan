@@ -1,0 +1,15 @@
+<%= render "shared/board_navigation" %>
+
+<div id="content">
+  <div id="topics" class="extended-small">
+    <% @topics.each do |topic| %>
+      <div id="topic-<%= topic.id %>" class="topic-list">
+        <%= link_to image_tag(topic.topic_image.url(:thumb)), board_topic_path(topic.board, topic) %>
+        <div class="teaser">
+          <p><%= topic.topic_name %></p>
+          <%= topic.description %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

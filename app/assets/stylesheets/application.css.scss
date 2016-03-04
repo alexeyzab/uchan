@@ -262,6 +262,27 @@ div {
   clear: both;
 }
 
+#topics {
+  padding: 20px 0px;
+  text-align: center;
+  .extended-small {
+    width: 165px;
+    max-height: 320px;
+  }
+  .topic-list {
+    vertical-align: top;
+    display: inline-block;
+    word-wrap: break-word;
+    overflow: hidden;
+    margin-top: 5px;
+    padding: 5px 15px 3px 15px;
+    position: relative;
+    .teaser {
+      display: block;
+    }
+  }
+}
+
 .topic {
   margin: 0;
   clear: both;
