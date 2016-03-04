@@ -14,6 +14,8 @@ sample_description = ["This is a great post", "This one is even better", "Not
                       one", "Good thing I have plenty of TEST images, huh"]
 
 Board.all.each do |board|
+  c = Catalog.new(board_id: board.id)
+  c.save
   t = Topic.new({ topic_name: sample_name.sample, description: sample_description.sample, board_id: board.id })
   t.topic_image = File.open("#{Dir.getwd}/spec/support/test.jpg")
   t.save
