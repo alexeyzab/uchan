@@ -9,8 +9,8 @@ describe Topic, :type => :model do
        is_at_most(500) }
   it { should validate_presence_of(:topic_image) }
   it { should validate_attachment_content_type(:topic_image).
-       allowing('image/png', 'image/gif', 'image/jpg').
-       rejecting('text/plain', 'text/xml') }
+       allowing("image/png", "image/gif", "image/jpg").
+       rejecting("text/plain", "text/xml") }
 
   describe "#last_five_posts" do
     it "shows the last five posts for each topic" do
