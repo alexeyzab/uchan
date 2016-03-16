@@ -19,7 +19,7 @@ describe BoardsController do
   describe "#show" do
     it "shows a particular board" do
       board = create(:board)
-      get :show, { id: board.id }
+      get :show, { id: board.slug }
 
       expect(response.status).to eq(200)
     end

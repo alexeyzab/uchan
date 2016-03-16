@@ -6,9 +6,9 @@ describe CatalogsController do
     context "with valid topics" do
       it "shows the topics and their images" do
         board = create(:board)
-        catalog = create(:catalog, board_id: board.id)
+        catalog = create(:catalog, board: board)
 
-        get :show, { board_id: board.id }
+        get :show, { board_id: board.slug }
 
         expect(response.status).to eq(200)
       end
