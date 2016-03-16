@@ -7,7 +7,7 @@ class BoardsController < ApplicationController
   end
 
   def show
-    @board = Board.find(params[:id])
+    @board = Board.find_by_slug(params[:id])
     @boards = Board.all
     @topics = @board.topics.bump_order.page(params[:page])
     @topic = @board.topics.build
@@ -16,6 +16,6 @@ class BoardsController < ApplicationController
   private
 
   def board_params
-    params.require(:board).permit(:name, :id, :category)
+    params.require(:board).permit(:name, :slug, :id, :category)
   end
 end

@@ -39,6 +39,6 @@ class PostsController < ApplicationController
   end
 
   def get_board
-    @board = Board.find(params[:board_id])
+    @board = Board.find_by_slug(params[:board_id])
   end
 end
