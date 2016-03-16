@@ -3,12 +3,14 @@ include ActionDispatch::TestProcess
 FactoryGirl.define do
 
   sequence(:name) { |n| "Board #{n}" }
+  sequence(:slug) { |n| "slug-#{n}" }
   sequence(:id) { |id| id }
   sequence(:topic_name) { |t| "Topic #{t}" }
   sequence(:post_description) { |p| "Post descripiton #{p}" }
 
   factory :board do
     name
+    slug
     category "Interests"
     id
   end
