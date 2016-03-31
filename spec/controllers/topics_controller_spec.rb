@@ -7,7 +7,7 @@ describe TopicsController do
       board = create(:board)
       topic = create(:topic, board: board)
 
-      get :show, { id: topic.id, board_id: board.slug }
+      get :show, params: { id: topic.id, board_id: board.slug }
 
       expect(response.status).to eq (200)
     end
@@ -17,7 +17,7 @@ describe TopicsController do
     context "with valid params" do
       it "creates a topic" do
         board = create(:board)
-        post :create, { board_id: board.slug, topic: { topic_name: "Test topic",
+        post :create, params: { board_id: board.slug, topic: { topic_name: "Test topic",
                                                       description: "Description",
                                                       topic_image: fixture_file_upload("#{Rails.root}/spec/support/test.jpg", "image/jpg") } }
 
@@ -28,7 +28,7 @@ describe TopicsController do
     context "with invalid params" do
       it "doesn't create a topic" do
         board = create(:board)
-        post :create, { board_id: board.slug, topic: { topic_name: nil, description: nil } }
+        post :create, params: { board_id: board.slug, topic: { topic_name: nil, description: nil } }
 
         expect(Topic.count).to eq(0)
       end
