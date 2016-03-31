@@ -22,7 +22,7 @@ describe Board do
     expect(board_two).to be_invalid
   end
 
-  it "has the proper length of name" do
+  it "has the proper name length" do
     board = build(:board, name: "#{'a' * 41}")
 
     expect(board).to be_invalid
