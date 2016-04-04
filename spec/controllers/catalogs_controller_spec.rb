@@ -8,7 +8,7 @@ describe CatalogsController do
         board = create(:board)
         catalog = create(:catalog, board: board)
 
-        get :show, { board_id: board.slug }
+        get :show, params: { board_id: board.slug }
 
         expect(response.status).to eq(200)
       end

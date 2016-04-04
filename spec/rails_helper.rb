@@ -15,6 +15,10 @@ WebMock.disable_net_connect!(:allow => "codeclimate.com")
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  # config.integrate do |with|
+  #   with.test_framework :rspec
+  #   with.library :rails
+  # end
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
