@@ -23,3 +23,7 @@ spec/support
 public/assets/application-*.js
 public/assets/application-*.css
 public/assets
+
+# Ignore tags
+tags
+db/tags
