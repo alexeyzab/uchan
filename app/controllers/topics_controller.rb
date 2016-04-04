@@ -27,7 +27,7 @@ class TopicsController < ApplicationController
   private
 
   def topic_params
-    params.permit(:topic_name, :description, :topic_image)
+    params.fetch(:topic, {}).permit(:topic_name, :description, :topic_image)
   end
 
   def get_board
